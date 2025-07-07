@@ -13,4 +13,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+def root():
+    return {"message": "FastAPI backend running."}
+
+
 app.include_router(endpoints.router)

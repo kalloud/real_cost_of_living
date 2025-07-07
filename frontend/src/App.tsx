@@ -4,7 +4,7 @@ function App() {
   const [salary, setSalary] = useState("")
   const [fx_rate, setFxRate] = useState("")
   const [colIndex, setColIndex] = useState("")
-  const [SentBackHome, setSentBackHome] = useState("")
+  const [TransferPercentage, setTransferPercentage] = useState("")
   const [result, setResult] = useState(null)
 
   const handleSubmit = async (e) => {
@@ -16,7 +16,7 @@ function App() {
         salary_local: parseFloat(salary),
         fx_rate: parseFloat(fx_rate),
         cost_of_living_index: parseFloat(colIndex),
-        SentBackHome: parseFloat(SentBackHome) / 100
+        transfer_percentage: parseFloat(TransferPercentage) / 100
       })
     })
     const data = await res.json()
@@ -44,7 +44,7 @@ function App() {
         <br />
         <label>
           % Sent Back Home:
-          <input type="number" value={SentBackHome} onChange={e => setSentBackHome(e.target.value)} required />
+          <input type="number" value={TransferPercentage} onChange={e => setTransferPercentage(e.target.value)} required />
         </label>
         <br />
         <button type="submit">Calculate</button>
