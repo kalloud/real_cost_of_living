@@ -98,6 +98,7 @@ function App() {
             <input
               type="number"
               min="0"
+              step="0.01"
               placeholder="Original → target currency"
               className="input input-bordered w-full mt-1"
               value={fxRate}
